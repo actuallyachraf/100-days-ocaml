@@ -21,6 +21,9 @@ let tests = "test suites for lab 03" >::: [
 "take" >:: (fun _ -> assert_equal [1;4;3;5] (take 4 [1;4;3;5;0;8;9]));
 "drop" >:: (fun _ -> assert_equal [0;8;9] (drop 4 [1;4;3;5;0;8;9]));
 "take tail recursive" >:: (fun _ -> assert_equal [1;4;3;5] (take' 4 [1;4;3;5;0;8;9]));
+"powerset" >:: (fun _ -> assert_equal [[]; [3]; [2]; [2; 3]; [1]; [1; 3]; [1; 2]; [1; 2; 3]]
+  (powerset [1;2;3]));
+"take" >:: (fun _ -> assert_equal (Some 1) (safe_hd [1;4;3;5;0;8;9]));
 
 
 

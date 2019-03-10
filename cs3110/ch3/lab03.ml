@@ -65,3 +65,11 @@ let rec drop n l =
     | [] -> []
     | h::t -> t)
 
+let rec powerset s = match s with
+| [] -> [[]]
+| h::t -> let ps = powerset t in
+    ps @ List.map (fun ss -> h :: ss) ps
+
+let safe_hd lst = match lst with
+| [] -> None
+| h::t -> Some h
